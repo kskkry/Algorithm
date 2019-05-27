@@ -18,6 +18,8 @@ void init(){
 	}
 }
 
+
+//直交座標系のとき
 void bfs(){
 	while(que.size()){
 		Pair p = que.front();
