@@ -6,6 +6,8 @@ using namespace std;
 int H,W;
 char a[1001][1001];
 int dist[1001][1001];
+int dx[4] = {-1,0,1,0};
+int dy[4] = {0,-1,0,1}; //今回はdx,dyを使わない
 queue<Pair> que;
 
 void init(){
