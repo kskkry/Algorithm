@@ -16,3 +16,9 @@ int lcm(int a,int b){
     時にはlong long などへの必要
     計算量が多い場合再起関数でなくmain関数内での繰り返し処理の方に適宣変えるべき　
 */
+
+/*shorter gcd*/
+int GCD(int x,int y){
+    return y ? GCD(y,x%y):x;
+}
+
