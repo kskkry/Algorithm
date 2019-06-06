@@ -2,6 +2,21 @@
 using namespace std;
 #define MM 1e9
 
+template<typename T>
+T binary_search(T key,T N,T L,T R){
+	L = 0;
+	R = N;
+	while(L < R){
+		mid = (L+R)/2;
+		if(a[mid] == key) return mid;
+		else if(key < a[mid]) R = mid;
+		else L = mid+1; //注意
+	}
+	return -1;
+}
+
+
+//以下は例
 int L,R,mid;
 //要素数Nの場合を考える
 //例 N = 10
