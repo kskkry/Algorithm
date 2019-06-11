@@ -21,4 +21,3 @@ int lcm(int a,int b){
 int GCD(int x,int y){
     return y ? GCD(y,x%y):x;
 }
-
