@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 const int MM = 1e9;
 const int MOD = MM+7;
