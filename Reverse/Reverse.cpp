@@ -22,6 +22,7 @@ long long COM(int n,int k){
 }
 int main(){
     init();
-    cout << COM(100,5) << endl;
-    cout << COM(10000,2020) << endl;
+    cout << COM(10,2) << endl; //45
+    cout << COM(100,5) << endl; //75287520
+    cout << COM(10000,2020) << endl; //762700078
 }
