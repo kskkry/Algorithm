@@ -5,6 +5,7 @@
 using namespace std;
 
 #define pi pair<int,int>
+#define ll long long
 #define INF 1e9
 #define MAX 1e5;
 struct edge {ll from,to,cost;};
