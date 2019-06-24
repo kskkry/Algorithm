@@ -1,3 +1,4 @@
+using namespace std;
 //任意定数
 const int MAX = 1e5;
 
@@ -42,4 +43,25 @@ int size(int x){
     return -parent[find(x)];
 }
 
+#include<vector>
+struct UnionFind {
+    vector<int> par;
+    UnionFind(int N) : par(N){
+        for(int i = 0; i < N; i++) par[i] = i;
+    }
+    int root(int x){
+        if (par[x] == x) return x;
+        return par[x] = root(par[x]);
+    }
+    void unite(int x,int y){
+        if (root(x) == root(y)) return;
+        par[root(x)] = root(y);
+    }
+    bool same(int x,int y){
+        return root(x) == root(y);
+    }
+    int size(int x){
+        return -par[find(x)];
+    }
+};
 
