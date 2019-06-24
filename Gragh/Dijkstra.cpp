@@ -5,6 +5,7 @@
 using namespace std;
 
 #define pi pair<int,int>
+#define pl pair<long long,long long>
 #define ll long long
 #define INF 1e9
 #define MAX 1e5;
