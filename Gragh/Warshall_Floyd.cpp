@@ -2,6 +2,7 @@
 #include<iostream>
 #include<algorithm>
 #define MM 1e9+7; // とても大きい数
+using namespace std;
 
 int N; // Nは頂点数
 

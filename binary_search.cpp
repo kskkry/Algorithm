@@ -34,7 +34,7 @@ int binary_search(int key,int N){
 }
 
 int main(){
-	cout << binary_search(6,10) << endl;//3
-	cout << binary_search(17,10) << endl;//8
-	cout << binary_search(99,10) << endl;//-1
+	cout << binary_search(6,10) << endl;  //3
+	cout << binary_search(17,10) << endl; //8
+	cout << binary_search(99,10) << endl; //-1
 }
