@@ -1,9 +1,109 @@
 #include <iostream>
-#include <cstdio>
-#include <algorithm>
+#include <string>
 #include <vector>
-#include <cmath>
+#include <queue>
+#include <set>
+#include <map>
+#include <utility>
+#include <stack>
+#include <numeric>
+#include <algorithm>
+#include <stdio.h>
+#include <bitset>
+#include <complex>
+#include <math.h>
+#include <iomanip>
 using namespace std;
+//using ll = long long;
+#define MM 1000000000
+#define MOD MM+7
+#define pi pair<int32,int32>
+#define pl pair<int64,int64>
+#define chmax(a,b) (a<b ? a=b:0)
+#define chmin(a,b) (a>b ? a=b:0)
+const long double PI = acos(-1);
+const long long INF = 1e15;
+int dx[8] = {-1,0,1,0,-1,-1,1,1};
+int dy[8] = {0,-1,0,1,-1,1,1,-1};
+template<typename T>
+T GCD(T u,T v){
+    return v ? GCD(v,u%v) : u;
+}
+
+
+//First
+//クラスカル法<=UnionFind
+#define MAX 100000
+
+int par[MAX],rank_[MAX];
+void init(int n){
+    for(int i = 0; i < n; i++){
+        par[i] = i;
+        rank_[i] = 0;
+    }
+}
+int find(int x){
+    if (par[x] == x) return x;
+    return par[x] = find(par[x]); 
+}
+
+void unite(int x,int y){
+    x = find(x);
+    y = find(y);
+    if (x == y) return;
+    if (rank_[x] < rank_[y]){
+        par[x] = y;
+    } else {
+        par[y] = x;
+        if (rank_[x] == rank_[y]){
+            rank_[x]++;
+        }
+    }
+}
+bool same(int x,int y){
+    return (find(x) == find(y));
+}
+
+struct edge{ int u,v,cost; };
+
+bool comp(const edge &e1, const edge &e2){
+    return e1.cost < e2.cost;
+}
+int V,E;
+edge es[MAX];
+
+int kruskal(){
+    sort(es,es+E,comp); //comp使う（sort）
+    init(V);
+    int res = 0;
+    for (int i = 0; i < E; i++){
+        edge e = es[i];
+        if (!same(e.u, e.v)){
+            unite(e.u, e.v);
+            res += e.cost; //結合＋コスト増加
+        }
+    }
+    return res;
+}
+
+int main(){
+    cin >> V >> E;
+    for (int i = 0; i < E; i++){
+        int s,t,w; cin >> s >> t >> w;
+        es[i] = (edge){s,t,w};
+    }
+    cout << kruskal() << endl;
+    return 0;
+}
+  
+
+
+
+
+
+//Second
+
+
 
 // Union Find用
 class DisjointSet {
