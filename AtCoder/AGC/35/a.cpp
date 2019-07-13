@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <stdio.h>
 #include <bitset>
+#include <limits.h>
 #include <complex>
 #include <iomanip>
 using namespace std;
@@ -28,6 +29,15 @@ T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
 }
 int main(){
+    int n; cin >> n;
+    int r;
+    int s = INT_MAX,ret = INT_MIN;
+    for(int i = 0; i < n; i++){
+        cin >> r;
+        ret = max(ret,r-s);
+        s = min(s,r);
+    }
+    cout << ret << endl;
 }
   
 
