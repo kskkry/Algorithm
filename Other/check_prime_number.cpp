@@ -36,9 +36,9 @@ int Prime_check(){
 bool Eratosthenes(int N){
     isPrime[0] = false;
     isPrime[1] = false;
-    for(int i = 2; i < N; i++){
+    for(int i = 2; i <= N; i++){
         if(isPrime[i] == 1){
-            for(int j = 2*i; j < N; j += i){
+            for(int j = 2*i; j <= N; j += i){
               isPrime[j] = false;
             }
         }

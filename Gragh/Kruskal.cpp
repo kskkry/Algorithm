@@ -32,7 +32,7 @@ T GCD(T u,T v){
 
 
 //First
-//クラスカル法<=UnionFind
+//クラスカル法 <= UnionFind
 #define MAX 100000
 
 int par[MAX],rank_[MAX];
@@ -66,6 +66,7 @@ bool same(int x,int y){
 
 struct edge{ int u,v,cost; };
 
+//sort用
 bool comp(const edge &e1, const edge &e2){
     return e1.cost < e2.cost;
 }
