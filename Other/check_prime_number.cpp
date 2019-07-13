@@ -15,7 +15,7 @@ bool isPrime(int N){
 
 //Sieve of Eratosthenes
 
-bool isPrime[N+1]}
+bool isPrime[N+1];
 void init(){
     for(int i = 1; i <= N; i++){
         isPrime[i] = true;
