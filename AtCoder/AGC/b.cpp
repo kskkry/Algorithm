@@ -28,6 +28,8 @@ T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
 }
 int main(){
+    int x,y; cin >> x >> y;
+    cout << GCD(x,y) << endl;
 }
   
 

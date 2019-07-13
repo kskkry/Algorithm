@@ -30,7 +30,6 @@ T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
 }
 
-
 //First
 //クラスカル法 <= UnionFind
 #define MAX 100000
@@ -151,7 +150,7 @@ double dist(double x1, double y1, double z1, double x2, double y2, double z2) {
   return sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2) + (z1-z2)*(z1-z2));
 }
 
-int main(int argc, char const* argv[]) {
+int main() {
   int n;
   while (cin >> n && n) {
     double x[100], y[100], z[100], r[100];
