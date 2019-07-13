@@ -4,6 +4,7 @@
 using namespace std;
 
 //basic
+const int N = 1e5;
 bool isprime(int N){
     if(N < 2) return false;
     if(N == 2) return true;
@@ -32,10 +33,9 @@ int Prime_check(){
     return -1;
 }
 
-isPrime[0] = false;
-isPrime[1] = false;
-
 bool Eratosthenes(int N){
+    isPrime[0] = false;
+    isPrime[1] = false;
     for(int i = 2; i < N; i++){
         if(isPrime[i] == 1){
             for(int j = 2*i; j < N; j += i){
