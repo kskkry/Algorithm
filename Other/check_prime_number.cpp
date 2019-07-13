@@ -1,8 +1,10 @@
 #include<iostream>
+#include<algorithm>
+#include<math.h>
 using namespace std;
 
 //basic
-bool isPrime(int N){
+bool isprime(int N){
     if(N < 2) return false;
     if(N == 2) return true;
     if(N % 2 == 0) return false;
