@@ -2,4 +2,5 @@
 Template Library
 ## Graph
 ## Reverse
-## Euclid
+## Euclid/integer
+## Others
