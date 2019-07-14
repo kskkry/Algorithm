@@ -30,22 +30,22 @@ T GCD(T u,T v){
 }
 int main(){
     int n,q; cin >> n >> q;
-    vector<vector<int> > v(n);
+    queue<int> que[n];
     for(int i = 0; i < q; i++){
         int num; cin >> num;
         if (num == 0){
             int t,x; cin >> t >> x;
-            v[t].push_back(x);
+            que[t].push(x);
         } else if (num == 1){
             int t; cin >> t;
-            cout << v[t][0];
-            for(int j = 0; j < v[t].size(); j++){
-                cout << " " << v[t][j];
+            if (que[t].size()){
+                cout << que[t].front() << endl;
             }
-            cout << endl;
         } else if (num == 2){
             int t; cin >> t;
-            v[t].clear();
+            if (que[t].size()){
+                que[t].pop();
+            }
         }
     }
 }
