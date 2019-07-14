@@ -33,6 +33,65 @@ T lcm(T x,T y){
     return x*y/GCD(x,y);
 }
 int main(){
+    int n,m; cin >> n >> m;
+    vector<vector<pair<int,bool> > > G(n);
+    int a,b,w,edge[n]; //矢印をつけていない辺の数
+    fill(edge,edge+n,0);
+    bool visited = false;
+    for(int i = 0; i < m; i++){
+        cin >> a >> b;
+        a--; b--;
+        G[a].push_back({b,false});
+        G[b].push_back({a,false});
+        edge[a]++;
+        edge[b]++;
+    }
+    vector<pair<int,int> > ans(0); //格納
+    for(int i = 0; i < n; i++){
+        if (edge[i] <= 1){
+            continue;
+        } else if (edge[i] % 2 == 0){
+            for(int num = 0; num <= G[i].size(); num++){
+                if (i == G[i][num].first) continue;
+                if (G[i][num].second == false){
+                    G[i][ G[i][num].first ].second = true;
+                    G[ G[i][num].first ][i].second = true;
+                    ans.push_back({i,G[i][num].first});
+                    edge[i]--;
+                    edge[G[i][num].first]--;
+                    cout << "1:" << i << " " << G[i][num].first << endl;
+                }
+            }
+        } else {
+            int cnt = 0;
+            for(int num = 0; num <= G[i].size(); num++){
+                if (i == G[i][num].first) continue;
+                if (G[i][num].second == false){
+                    cnt++;
+                    G[i][ G[i][num].first ].second = true;
+                    G[ G[i][num].first ][i].second = true;
+                    ans.push_back({i,G[i][num].first});
+                    edge[i]--;
+                    edge[G[i][num].first]--;
+                    cout << "2:" << i << " " << G[i][num].first << endl;
+                    if(cnt+1 == G[i].size()){
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    cout << endl;
+    //check
+    for(int i = 0; i < n; i++){
+        if(edge[i] > 0){
+            cout << "-1" << endl;
+            return 0;
+        }
+    }
+    for(int i = 0; i < ans.size(); i++){
+        cout << ans[i].first+1 << " " << ans[i].second+1 << endl;
+    }
 }
   
 
