@@ -28,26 +28,12 @@ template<typename T>
 T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
 }
+template<typename T>
+T lcm(T x,T y){
+    return x*y/GCD(x,y);
+}
 int main(){
-    int n,q; cin >> n >> q;
-    queue<int> que[n];
-    for(int i = 0; i < q; i++){
-        int num; cin >> num;
-        if (num == 0){
-            int t,x; cin >> t >> x;
-            que[t].push(x);
-        } else if (num == 1){
-            int t; cin >> t;
-            if (que[t].size()){
-                cout << que[t].front() << endl;
-            }
-        } else if (num == 2){
-            int t; cin >> t;
-            if (que[t].size()){
-                que[t].pop();
-            }
-        }
-    }
+    cout << "Hello" << endl;
 }
   
 
