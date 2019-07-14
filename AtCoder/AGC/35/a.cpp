@@ -29,15 +29,25 @@ T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
 }
 int main(){
-    int n; cin >> n;
-    int r;
-    int s = INT_MAX,ret = INT_MIN;
-    for(int i = 0; i < n; i++){
-        cin >> r;
-        ret = max(ret,r-s);
-        s = min(s,r);
+    int n,q; cin >> n >> q;
+    vector<vector<int> > v(n);
+    for(int i = 0; i < q; i++){
+        int num; cin >> num;
+        if (num == 0){
+            int t,x; cin >> t >> x;
+            v[t].push_back(x);
+        } else if (num == 1){
+            int t; cin >> t;
+            cout << v[t][0];
+            for(int j = 0; j < v[t].size(); j++){
+                cout << " " << v[t][j];
+            }
+            cout << endl;
+        } else if (num == 2){
+            int t; cin >> t;
+            v[t].clear();
+        }
     }
-    cout << ret << endl;
 }
   
 
