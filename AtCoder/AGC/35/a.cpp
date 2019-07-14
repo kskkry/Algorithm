@@ -33,7 +33,6 @@ T lcm(T x,T y){
     return x*y/GCD(x,y);
 }
 int main(){
-    cout << "Hello" << endl;
 }
   
 
