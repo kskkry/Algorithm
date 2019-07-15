@@ -12,6 +12,7 @@
 #include <bitset>
 #include <limits.h>
 #include <complex>
+#include <deque>
 #include <iomanip>
 using namespace std;
 #define MM 1000000000
@@ -32,7 +33,28 @@ template<typename T>
 T lcm(T x,T y){
     return x*y/GCD(x,y);
 }
+
+
 int main(){
+    int n,m; cin >> n;
+    int a[n],b[m];
+    for(int i = 0; i < n; i++) cin >> a[i];
+    cin >> m;
+    for(int i = 0; i < m; i++) cin >> b[i];
+    for(int i = 0; i < min(m,n); i++){
+        if (a[i] > b[i]){
+            cout << 0 << endl;
+            return 0;
+        } else if (a[i] < b[i]){
+            cout << 1 << endl;
+            return 0;
+        }
+    }
+    if (m < n){
+        cout << 1 << endl;
+    } else if (m > n){
+        cout << 0 << endl;
+    } 
 }
   
 
