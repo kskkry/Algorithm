@@ -31,7 +31,60 @@ template<typename T>
 T lcm(T x,T y){
     return x*y/GCD(x,y);
 }
-int main(){
+const int SIZE = 100005;
+vector<int> vec[SIZE];
+
+bool use[SIZE]; //その頂点を使ったか判定
+int dep[SIZE],deg[SIZE]; //
+
+
+//全域木の構成をイメージ
+void dfs(int v = 0,int p = -1,int d = 0){
+    use[v] = true;
+    dep[v] = d;
+    //まずある頂点の出次数について考える
+    for(int i = 0; i < vec[v].size(); i++){
+        int to = vec[v][i];
+        if (to != p){
+            //未使用の頂点ならば再帰
+            if (!use[to]) dfs(to,v,d+1);
+            //頂点を使用済みならば比較(dep[v]=d)
+            else if (dep[to] < dep[v]){
+                cout << v+1 << " " << to+1 << endl;
+                deg[v]++;
+            }
+        }
+    }
+    if (p != -1){
+        if (deg[v]%2 == 1){
+            cout << v+1 << " " << p+1 << endl;
+            deg[v]++;
+        } else {
+            cout << p+1 << " " << v+1 << endl;
+            deg[p]++;
+        }
+    }
 }
+
+int main(){
+    int n,m; cin >> n >> m; 
+    for(int i = 0; i < m; i++){
+        int a,b; cin >> a >> b;
+        a--; b--;
+        //辺の挿入
+        vec[a].push_back(b);
+        vec[b].push_back(a);
+    }
+
+    //全ての辺の個数が奇数ならば不成立
+    if (m % 2 == 1){
+        cout << "-1" << endl;
+        return 0;
+    }
+    //関数＆出力
+    dfs();
+    return 0;
+}
+
   
 
