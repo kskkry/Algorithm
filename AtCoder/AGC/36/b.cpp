@@ -33,6 +33,35 @@ T lcm(T x,T y){
     return x*y/GCD(x,y);
 }
 int main(){
+    long long n; cin >> n;
+    long long t = n;
+    bool flg = true;
+    for(long long i = 2; i*i <= n; i++){
+        if (t % i == 0){
+            flg = false;
+            break;
+        }
+    }
+    if (n == 1){
+        cout << "Not Prime" << endl;
+        return 0;
+    }
+    if (flg){
+        cout << "Prime" << endl;
+        return 0;
+    } else {
+        long long in = t % 10;
+        long long sum = 0;
+        while(t > 0){
+            sum += (t%10);
+            t /= 10;
+        }
+        if (in % 2 != 0 && in != 5 && sum % 3 != 0){
+            cout << "Prime" << endl;
+            return 0;
+        }
+    }
+    cout << "Not Prime" << endl;
 }
   
 
