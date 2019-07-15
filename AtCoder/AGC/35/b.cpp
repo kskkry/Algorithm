@@ -56,6 +56,7 @@ void dfs(int v = 0,int p = -1,int d = 0){
         }
     }
     if (p != -1){
+        //偶奇で分けて出力する頂点を選択
         if (deg[v]%2 == 1){
             cout << v+1 << " " << p+1 << endl;
             deg[v]++;
@@ -67,23 +68,6 @@ void dfs(int v = 0,int p = -1,int d = 0){
 }
 
 int main(){
-    int n,m; cin >> n >> m; 
-    for(int i = 0; i < m; i++){
-        int a,b; cin >> a >> b;
-        a--; b--;
-        //辺の挿入
-        vec[a].push_back(b);
-        vec[b].push_back(a);
-    }
-
-    //全ての辺の個数が奇数ならば不成立
-    if (m % 2 == 1){
-        cout << "-1" << endl;
-        return 0;
-    }
-    //関数＆出力
-    dfs();
-    return 0;
 }
 
   
