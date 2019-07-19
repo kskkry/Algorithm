@@ -35,8 +35,6 @@ T lcm(T x,T y){
 }
 
 int main(){
-    long long m,n; cin >> m >> n;
-    cout << Pow(m,n) << endl;
 }
   
 
