@@ -5,7 +5,7 @@
 
 
 
-//べき乗関数
+//べき乗関数 √x
 long long Pow(long long base,long long x){
     //マクロ定義のままMODを使ったらエラーを起こした（多分long long の定義の問題かと）
     const long long mod = (long long)MOD;
@@ -18,3 +18,27 @@ long long Pow(long long base,long long x){
 }
 
 //m^(n) cout << Pow(m,n) << endl;
+
+//引用（ほぼ同じ）
+long long pow_mod(long long n,long long k,long long m){
+    if (k == 0){
+        return 1;
+    } else if (k % 2 == 1){
+        return pow_mod(n,k-1,m)*n % m;
+    } else {
+        long long t = pow_mod(n,k/2,m);
+        return t*t % m;
+    }
+}
+
+//進数表現(写経)
+long long POW_MOD(long long n,long long k,long long m){
+    long long r = 1;
+    //kの下の桁から処理、右シフトで処理し終えたら桁を追い出す
+    //ゼロになるまで続ける
+    for (; k > 0; k >>= 1){
+        if (k & 1) r = (r*n)%m; //kの一番下の桁が立っていたらnをかける
+        n = (n*n) % m;          //次のM桁の処理に向けてnを自乗しておく
+    }
+    return r;
+}
