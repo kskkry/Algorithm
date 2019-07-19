@@ -33,13 +33,6 @@ template<typename T>
 T lcm(T x,T y){
     return x*y/GCD(x,y);
 }
-long long Pow(long long base,long long x){
-    const long long mod = (long long)MOD;
-    if (x == 0) return 1;
-    if (x%2 == 1) return base * Pow(base,x-1) % mod;
-    long long y = Pow(base, x/2);
-    return y * y % mod;
-}
 
 int main(){
     long long m,n; cin >> m >> n;
