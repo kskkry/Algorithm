@@ -12,6 +12,7 @@
 #include <bitset>
 #include <complex>
 #include <iomanip>
+#include <math.h>
 using namespace std;
 #define MM 1000000000
 #define MOD MM+7
