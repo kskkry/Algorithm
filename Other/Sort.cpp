@@ -1,4 +1,19 @@
 
+//挿入ソート
+void insertion_sort(int a[],int n){
+    for(int i = 0; i < n; i++){
+        int v = a[i];
+        int j = i-1;
+        while(j >= 0 && a[j] > v){
+            a[j+1] = a[j];
+            j--;
+        }
+        a[j+1] = v;
+    }
+}
+
+
+
 //バブルソート
 void bubblesort(int a[],int n){
     bool flg = 1;
@@ -35,7 +50,7 @@ void selectionsort(int a[],int n){
 }
 
 
-//挿入ソート
+//挿入ソート(未完成)
 void shellsort(int a[],int n,int g){
     for(int i = g; i < n; i++){
         int v = a[i];
@@ -48,7 +63,7 @@ void shellsort(int a[],int n,int g){
     }
 }
 
-//シェルソート
+//シェルソート(未完成)
 void shellsort(int a[],int n){
     int cnt = 0;
     int m = -1e9;
