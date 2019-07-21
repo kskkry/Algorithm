@@ -27,6 +27,11 @@ template<typename T>
 T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
 }
+template<typename T>
+T LCM(T x,T y){
+    T gc = GCD(x,y);
+    return x*y/gc;
+}
 int main(){
 }
   

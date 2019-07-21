@@ -29,9 +29,11 @@ T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
 }
 template<typename T>
-T lcm(T x,T y){
-    return x*y/GCD(x,y);
+T LCM(T x,T y){
+    T gc = GCD(x,y);
+    return x*y/gc;
 }
+
 int main(){
     long long n; cin >> n;
     long long t = n;

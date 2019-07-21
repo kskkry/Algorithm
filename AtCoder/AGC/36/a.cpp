@@ -31,7 +31,8 @@ T GCD(T u,T v){
 }
 template<typename T>
 T LCM(T x,T y){
-    return x*y/(T)GCD(x,y);
+    T gc = GCD(x,y);
+    return x*y/gc;
 }
 
 long long pow_mod(long long n,long long k,long long m){
