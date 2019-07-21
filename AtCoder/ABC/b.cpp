@@ -19,6 +19,7 @@ using namespace std;
 #define pl pair<int64,int64>
 #define chmax(a,b) (a<b ? a=b:0)
 #define chmin(a,b) (a>b ? a=b:0)
+#define en cout << endl //セミコロンつけろ
 const long double PI = acos(-1);
 const long long INF = 1e15;
 int dx[8] = {-1,0,1,0,-1,-1,1,1};
