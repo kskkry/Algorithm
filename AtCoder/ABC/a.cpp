@@ -32,7 +32,21 @@ template<typename T>
 T LCM(T x,T y){
     return x*y/(T)GCD(x,y);
 }
+
+inline void bfs(int start,int end,vector<vector<int> > G,int dist[]){
+    //if (G[start].size() == 0) return;
+    if (start == end) return;
+    for(int i = 0; i < G[start].size(); i++){
+        if (dist[G[start][i]] >= dist[start]+1){
+            dist[G[start][i]] = min(dist[G[start][i]],dist[start]+1);
+            bfs(G[start][i],end,G,dist);
+        }
+    }
+}
 int main(){
 }
-  
+
+
+
+
 
