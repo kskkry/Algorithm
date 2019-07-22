@@ -49,8 +49,17 @@ long long pow_mod(long long n,long long k,long long m){
 
 
 int main(){
-    long long a,b,c; cin >> a >> b >> c;
-    cout << pow_mod(a,c,b) << endl;
+    int n; cin >> n;
+    int ans = 0;
+    for(int i = 0; i < n; i++){
+        int a; cin >> a;
+        bool flg = true;
+        for(int num = 2; num*num <= a; num++){
+            if (a % num == 0) flg = false;
+        }
+        if (flg) ans++;
+    }
+    cout << ans << endl;
 }
   
 
