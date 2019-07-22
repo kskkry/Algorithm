@@ -6,6 +6,9 @@ using namespace std;
 const int N = 200020;
 const int INF = (1LL << 31) - 1;
 
+
+//Range Sum Query
+//Segment treeで代替可能
 struct BIT {
     int N;
     vector<int> dat;
@@ -32,6 +35,7 @@ struct BIT {
 };
 
 /* 
+//Range Sum Query
 class BIT{
     public:
     //[1,i]
