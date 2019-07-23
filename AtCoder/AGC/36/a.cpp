@@ -49,6 +49,9 @@ long long pow_mod(long long n,long long k,long long m){
 
 
 int main(){
+    string s,t,ans; cin >> s >> t;
+    if (s[0] == '-' && t[0] == '-'){}
+    en;
 }
   
 
