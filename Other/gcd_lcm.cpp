@@ -22,3 +22,8 @@ int GCD(int x,int y){
     return y ? GCD(y,x%y):x;
 }
 
+#include <iostream>
+//#include "set_name.h"
+int main(){
+    //std::cout << TR << std::endl;
+}
