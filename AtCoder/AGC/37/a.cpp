@@ -49,22 +49,6 @@ long long pow_mod(long long n,long long k,long long m){
 
 
 int main(){
-    while(true){
-    int n; cin >> n;
-    if (n == 0) break;
-    int a[n];
-    int sum = 0;
-    for(int i = 0; i < n; i++){
-        cin >> a[i];
-        sum += a[i];
-    }
-    sum /= n;
-    int ans = 0;
-    for(int i = 0; i < n; i++){
-        if (sum >= a[i]) ans++;
-    }
-    cout << ans << endl;
-    }
 }
   
 
