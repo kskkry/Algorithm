@@ -49,12 +49,22 @@ long long pow_mod(long long n,long long k,long long m){
 
 
 int main(){
-    string s,t,ans; cin >> s >> t;
-    if (s[0] == '-' && t[0] == '-'){
-        
-
+    while(true){
+    int n; cin >> n;
+    if (n == 0) break;
+    int a[n];
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+        sum += a[i];
     }
-    en;
+    sum /= n;
+    int ans = 0;
+    for(int i = 0; i < n; i++){
+        if (sum >= a[i]) ans++;
+    }
+    cout << ans << endl;
+    }
 }
   
 
