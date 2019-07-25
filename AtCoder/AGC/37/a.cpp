@@ -46,25 +46,16 @@ long long pow_mod(long long n,long long k,long long m){
         return t*t % m;
     }
 }
-int dist[100][100];
-bool visit[100][100];
-vector<vector<int> > G(0);
-void init(int n){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            dist[i][j] = MM;
-            visit[i][j] = false;
-        }
+
+void calc(string s1,string s2){
+    reverse(s1.begin(),s1.end());
+    reverse(s2.begin(),s2.end());
+    string ans;
+    for(int i = 0; i < min(s1.size(),s2.size()); i++){
+        
     }
 }
 int main(){
-    int V,E; cin >> V >> E;
-    vector<vector<int> > G(V);
-    for(int i = 0; i < E; i++){
-        int s,t; cin >> s >> t;
-        G[s].push_back(t);
-        G[t].push_back(s);
-    }
 }
   
 

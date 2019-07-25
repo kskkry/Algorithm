@@ -46,6 +46,15 @@ inline void bfs(int start,int end,vector<vector<int> > G,int dist[]){
     }
 }
 int main(){
+    while(true){
+        string a; cin >> a;
+        if (a == "0") break;
+        int ans = 0;
+        for(int i = 0; i < a.size(); i++){
+            ans += (a[i]-'0');
+        }
+        cout << ans << endl;
+    }
 }
 
 
