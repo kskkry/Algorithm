@@ -36,6 +36,21 @@ T LCM(T x,T y){
 }
 
 int main(){
+    int n,m; cin >> n >> m;
+    int c[m];
+    int dp[200020];
+    fill(dp,dp+200020,MM);
+    for(int i = 0; i < m; i++){
+        cin >> c[i];
+    }
+    dp[c[0]] = 1;
+    dp[0] = 0;
+    for(int i = 1; i < m; i++){
+        for(int num = 0; num <= 2*n; num++){
+            if (dp[num-c[i]] != MM) dp[num] = min(dp[num], dp[num-c[i]] + 1);
+        }
+    }
+    cout << dp[n] << endl;
 }
   
 

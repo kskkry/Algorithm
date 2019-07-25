@@ -58,15 +58,12 @@ void init(int n){
     }
 }
 int main(){
-    int n,a,b; cin >> n >> a >> b;
-    a--; b--;
-    int m; cin >> m;
-    for(int i = 0; i < m; i++){
-        int x,y; cin >> x >> y;
-        x--; y--;
-        visit[x][y] = true;
-        G[x].push_back(y);
-        G[y].push_back(x);
+    int V,E; cin >> V >> E;
+    vector<vector<int> > G(V);
+    for(int i = 0; i < E; i++){
+        int s,t; cin >> s >> t;
+        G[s].push_back(t);
+        G[t].push_back(s);
     }
 }
   
