@@ -22,3 +22,5 @@ for i in range(100000):
 
 plt.plot(list_x,list_y)
 plt.show()
+
+#画像は10<= x <= 1000000
