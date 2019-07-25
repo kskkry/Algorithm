@@ -1,6 +1,7 @@
 //ライブラリにするほどか？
 //橋
 #include<bits/stdc++.h>
+
 using namespace std;
 #define MAX_N 100001
 vector<int> G[MAX_N];
