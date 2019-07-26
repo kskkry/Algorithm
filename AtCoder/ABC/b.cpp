@@ -34,8 +34,6 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 int main(){
-    int n,k; cin >> n >> k;
-    
 }
   
 

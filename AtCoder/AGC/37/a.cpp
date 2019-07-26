@@ -26,6 +26,8 @@ const long double PI = acos(-1);
 const long long INF = 1e15;
 int dx[8] = {-1,0,1,0,-1,-1,1,1};
 int dy[8] = {0,-1,0,1,-1,1,1,-1};
+
+
 template<typename T>
 T GCD(T u,T v){
     return v ? GCD(v,u%v) : u;
@@ -47,15 +49,8 @@ long long pow_mod(long long n,long long k,long long m){
     }
 }
 
-void calc(string s1,string s2){
-    reverse(s1.begin(),s1.end());
-    reverse(s2.begin(),s2.end());
-    string ans;
-    for(int i = 0; i < min(s1.size(),s2.size()); i++){
-        
-    }
-}
-int main(){
-}
+
+
+int main(){}
   
 
