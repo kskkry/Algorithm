@@ -1,6 +1,6 @@
 
 
-//写経者なので要改良
+//
 
 #include<bits/stdc++.h>
 #define EPS (1e-10)
@@ -203,8 +203,8 @@ Polygon andrewScan(Polygon s){
     for(int i=u.size()-2;i>=1;i--) l.push_back(u[i]);
     return l;
 }
-
-
+/* 
+//反射(ある直線を対称軸としてある点と線対称位置にある点の座標)
 int main(){
     double x1,y1,x2,y2;
     cin>>x1>>y1>>x2>>y2;
@@ -217,3 +217,63 @@ int main(){
     }
     return 0;
 }
+
+*/
+
+/* 
+//射影
+int main(){
+  double x1,y1,x2,y2;
+  cin>>x1>>y1>>x2>>y2;
+  Line base=Line(Point(x1,y1),Point(x2,y2));
+  int q;cin>>q;
+  while(q--){
+    cin>>x1>>y1;
+    Point p=project(base,Point(x1,y1));
+    printf("%.8lf %.8lf\n",p.x,p.y);
+  }
+  return 0;
+}
+*/
+
+
+
+
+/*
+//（直線の関係）反時計回りの判定
+int main(){
+  map<int,string> m;
+  m[COUNTER_CLOCKWISE] = "COUNTER_CLOCKWISE";
+  m[CLOCKWISE] = "CLOCKWISE";
+  m[ONLINE_BACK] = "ONLINE_BACK";
+  m[ONLINE_FRONT] = "ONLINE_FRONT";
+  m[ON_SEGMENT] = "ON_SEGMENT";
+  double x1,y1,x2,y2;
+  cin>>x1>>y1>>x2>>y2;
+  Point p1=Point(x1,y1),p2=Point(x2,y2);
+  int q;cin>>q;
+  while(q--){
+    cin>>x1>>y1;
+    cout << m[ccw(p1,p2,Point(x1,y1))] << endl;
+  }
+  return 0;
+}
+*/
+
+
+
+/*
+//平行・垂直(二つの直線の関係(垂直・平行)を判定)
+int main(){
+  int n;cin>>n;
+  double x0,y0,x1,y1,x2,y2,x3,y3;
+  while(n--){
+    cin>>x0>>y0>>x1>>y1>>x2>>y2>>x3>>y3;
+    Point p0=Point(x0,y0),p1=Point(x1,y1),p2=Point(x2,y2),p3=Point(x3,y3);
+    if(isParallel(p0,p1,p2,p3)) cout << 2 << endl;
+    else if(isOrthogonal(p0,p1,p2,p3)) cout << 1 << endl;
+    else cout << 0 << endl;
+  }
+  return 0;
+}
+*/
