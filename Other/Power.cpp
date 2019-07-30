@@ -7,7 +7,7 @@
 
 //べき乗関数 √x
 long long Pow(long long base,long long x){
-    //マクロ定義のままMODを使ったらエラーを起こした（多分long long の定義の問題かと）
+    //マクロ定義のままMODを使ったらエラーを起こした(多分long long の定義の問題(const long long などに要変更))
     const long long mod = (long long)MOD;
     if (x == 0) return 1;
     //指数が奇数の時、x^(2n+1) -> x * x^(2n)と変換
