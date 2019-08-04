@@ -15,6 +15,7 @@
 #include <complex>
 #include <deque>
 #include <iomanip>
+#include <list>
 using namespace std;
 #define pi pair<int32,int32>
 #define pl pair<int64,int64>
@@ -38,4 +39,12 @@ template<typename T>
 T LCM(T x,T y){
     T gc = GCD(x,y);
     return x*y/gc;
+}
+
+int main(){
+    int K,x,y; cin >> K >> x >> y;
+    if (K % 2 == 0 && (x+y) % 2 == 1){
+        cout << -1 << endl;
+        return 0;
+    }
 }
