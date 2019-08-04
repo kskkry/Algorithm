@@ -1,2 +1,5 @@
 a,b = map(int,input().split())
-print(a//b,a%b, '{:.10f}'.format(a/b))
+if abs(a-b)%2 == 0:
+    print((a+b)//2)
+else :
+    print("IMPOSSIBLE")

@@ -39,32 +39,3 @@ T LCM(T x,T y){
     T gc = GCD(x,y);
     return x*y/gc;
 }
-
-long long pow_mod(long long n,long long k,long long m){
-    if (k == 0){
-        return 1;
-    } else if (k % 2 == 1){
-        return pow_mod(n,k-1,m)*n % m;
-    } else {
-        long long t = pow_mod(n,k/2,m);
-        return t*t % m;
-    }
-}
-
-vector<long long> divisor(long long x){
-    vector<long long> res;
-    for(long long i = 1; i*i <= x; i++){
-        if (x % i == 0){
-            res.push_back(i);
-            if (i*i != x) res.push_back(x/i);
-        }
-    }
-    sort(res.begin(),res.end());
-    return res;
-}
-
-
-int main(){
-    int n,a,b; cin >> n >> a >> b;
-    cout << n*(100+b)/100 - n*(100+a)/100 << endl;
-}
