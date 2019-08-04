@@ -40,5 +40,24 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 int main(){
+    int N; cin >> N;
+    int H[N]; 
+    for(int i = 0; i < N; i++){
+        cin >> H[i];
+    }
 
+    reverse(H,H+N);
+    for(int i = 1; i < N; i++){
+        if (H[i-1] >= H[i]){
+            continue;
+        } else {
+            H[i]--;
+            if (H[i-1] < H[i]){
+                cout << "No" << endl;
+                return 0;
+            }
+        }
+    }
+    cout << "Yes" << endl;
+    return 0;
 }

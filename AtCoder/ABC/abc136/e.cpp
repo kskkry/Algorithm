@@ -40,5 +40,4 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 int main(){
-
 }

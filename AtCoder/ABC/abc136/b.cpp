@@ -40,5 +40,16 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 int main(){
-
+    int N; cin >> N;
+    int ans = 0;
+    for(int i = 1; i <= N; i++){
+        if (i >= 10000 && i != 100000){
+            ans++;
+        } else if (100 <= i && i <= 999){
+            ans++;
+        } else if (1 <= i && i <= 9){
+            ans++;
+        }
+    }
+    cout << ans << endl;
 }

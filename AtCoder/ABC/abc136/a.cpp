@@ -42,9 +42,10 @@ T LCM(T x,T y){
 }
 
 int main(){
-    int K,x,y; cin >> K >> x >> y;
-    if (K % 2 == 0 && (x+y) % 2 == 1){
-        cout << -1 << endl;
-        return 0;
+    int a,b,c; cin >> a >> b >> c;
+    if (b+c >= a){
+        cout << b+c-a << endl;
+    } else {
+        cout << 0 << endl;
     }
 }
