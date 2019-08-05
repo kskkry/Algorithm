@@ -41,4 +41,33 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
-int main(){}
+int main(){
+    int q; cin >> q;
+    bitset<64> Bit(0);
+    for(int i = 0; i < q; i++){
+        int n; cin >> n;
+        if (n == 0){
+            int m; cin >> m;
+            cout << Bit[m] << endl;
+        } else if (n == 1){
+            int m; cin >> m;
+            Bit[m] = 1;
+        } else if (n == 2){
+            int m; cin >> m;
+            Bit[m] = 0;
+        } else if (n == 3){
+            int m; cin >> m;
+            Bit[m] = Bit[m]^1;
+        } else if (n == 4){
+            cout << Bit.all() << endl;
+        } else if (n == 5){
+            cout << Bit.any() << endl;
+        } else if (n == 6){
+            cout << Bit.none() << endl;
+        } else if (n == 7){
+            cout << Bit.count() << endl;
+        } else {
+            cout << Bit.to_ulong() << endl;
+        }
+    }
+}
