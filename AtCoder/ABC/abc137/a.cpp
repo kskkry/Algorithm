@@ -41,8 +41,30 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
-void dfs(){
-}
 
 int main(){
+    int N; cin >> N;
+    int a[N];
+    for(int i = 0; i < N; i++){
+        cin >> a[i];
+    }
+    sort(a,a+N);
+    int cnt = 1,num = a[0],tmp = 1,tmp_num = a[0];
+    for(int i = 1; i < N; i++){
+        if (a[i-1] == a[i]){
+            tmp++;
+        } else {
+            if (tmp > cnt){
+                cnt = tmp;
+                num = tmp_num;
+            }
+            tmp = 1;
+            tmp_num = a[i];
+        }
+    }
+    if (tmp > cnt){
+        cnt = tmp;
+        num = tmp_num;
+    }
+    cout << num << " " << cnt << endl;
 }
