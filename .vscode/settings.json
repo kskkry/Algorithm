@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "vector": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     },
     "python.pythonPath": "C:\\Users\\kkkos\\.conda\\envs\\for_practice\\python.exe"
 }
