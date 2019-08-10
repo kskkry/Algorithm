@@ -41,4 +41,34 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
-int main(){}
+int main(){
+    long long N,M; cin >> N >> M;
+    long long a,b;
+    //int dp[100010]; fill(dp,dp+100010,MM);
+    long long ans = 0;
+    vector<pair<long long,long long>> p;
+    for(int i = 0; i < N; i++){
+        cin >> a >> b;
+        p.push_back({a,b});
+    }
+    long long mx = 0,cnt = 0;
+
+    sort(p.begin(),p.end());
+
+    priority_queue<long long> pq;
+    int pn = 0;
+    for(int i = M-1; i >= 0; i--){
+        int day = M-i;
+        while(pn <= N && p[pn].first <= day){
+            pq.push(p[pn++].second);
+        }
+        if (!pq.empty()){
+            ans += pq.top();
+            pq.pop();
+        }
+    }
+    cout << ans << endl;
+
+
+
+}

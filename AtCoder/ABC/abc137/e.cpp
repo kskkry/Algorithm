@@ -41,4 +41,22 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
-int main(){}
+int main(){
+    long long N,M; cin >> N >> M;
+    long long a,b;
+    //int dp[100010]; fill(dp,dp+100010,MM);
+    long long ans = 0;
+    vector<pair<long long,long long>> p;
+    for(int i = 0; i < N; i++){
+        cin >> a >> b;
+        p.push_back({b,a});
+    }
+    long long mx = 0,cnt = 0;
+
+    sort(p.begin(),p.end());
+    reverse(p.begin(),p.end());
+
+    for(int i = 0; i < N; i++){
+    }
+    cout << ans << endl;
+}

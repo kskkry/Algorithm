@@ -41,4 +41,30 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
-int main(){}
+
+int main(){
+    int N; cin >> N;
+    vector<string> s(0);
+
+    
+    map<string,long long> mp;
+    for(int i = 0; i < N; i++){
+        string t; cin >> t;
+        sort(t.begin(),t.end());
+        s.push_back(t);
+    }
+    long long ans = 0;
+    sort(s.begin(),s.end());
+    for(int i = 1; i < N; i++){
+        if (s[i-1] == s[i]) mp[s[i]]++;
+    }
+    for(int i = 1; i < N; i++){
+        if (mp[s[i]] > 0){
+            //cout << "mp[s[i] = " << mp[s[i]] << s[i] << endl;
+            ans += mp[s[i]]*(mp[s[i]]+1)/2;
+            mp[s[i]] = 0;
+        }
+    }
+
+    cout << ans << endl;
+}
