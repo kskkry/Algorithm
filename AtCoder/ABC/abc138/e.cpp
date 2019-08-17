@@ -16,9 +16,10 @@
 #include <deque>
 #include <iomanip>
 #include <list>
+#include <time.h>
 using namespace std;
-#define pi pair<int32,int32>
-#define pl pair<int64,int64>
+#define pi pair<int,int>
+#define pl pair<long long,long long>
 #define chmax(a,b) (a<b ? a=b:0)
 #define chmin(a,b) (a>b ? a=b:0)
 #define en cout << endl //セミコロンつけろ

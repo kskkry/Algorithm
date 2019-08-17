@@ -16,9 +16,10 @@
 #include <deque>
 #include <iomanip>
 #include <list>
+#include <time.h>
 using namespace std;
-#define pi pair<int32,int32>
-#define pl pair<int64,int64>
+#define pi pair<int,int>
+#define pl pair<long long,long long>
 #define chmax(a,b) (a<b ? a=b:0)
 #define chmin(a,b) (a>b ? a=b:0)
 #define en cout << endl //セミコロンつけろ
@@ -41,6 +42,34 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
+long long func(long long a,long long b){
+    return a/b;
+}
 
 int main(){
+    int N,M; cin >> N >> M;
+    int a[100010],st[100010];
+    fill(st,st+100010,1);
+    long long dp[100010];
+    fill(dp,dp+100010,0);
+    dp[0] = 1;
+    for (int i = 0; i < M; i++){
+        cin >> a[i];
+        st[a[i]] = 0;
+    }
+    for (int i = 0; i < N+10; i++){
+        if (st[i] == 0) continue;
+        if (st[i+2] == 1){
+            dp[i+2] += dp[i];
+            dp[i+2] %= MOD;
+        }
+        if (st[i+1] == 1){
+            dp[i+1] += dp[i];
+            dp[i+1] %= MOD;
+        }
+    }
+    cout << dp[N] << endl;
 }
+
+
+

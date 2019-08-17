@@ -41,22 +41,33 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
-long long N,K;
-long long dp[60][2],a[100010];
 int main(){
-    cin >> N >> K;
-    for(int i = 0; i < N; i++){
-        cin >> a[i];
+    string s; cin >> s;
+    int n = s.size();
+    //map<string,int> mp;
+    string tmp1 = "",tmp2 = "";
+    int ans = 0;
+    if (n == 1){
+        cout << 1 << endl;
+        return 0;
     }
-    for(int i = 0; i < 59; i++){
-        long long z = 0, o = 0;
-        for(int j = 0; j < N; j++){
-            if ((a[j] & (1LL << i)) == 0) z++;
-            else o++;
+    for (int i = 0; i < n; i++){
+        if (i == 0){
+            tmp1 += s[0];
+            ans++;
         }
-        if ((K & (1LL << i)) == 0) dp[i][0] = dp[i-1][0] + (o << i);
-        else dp[i][0] = max(dp[i-1][0] + (z << i), dp[i-1][1] + (o << i));
-        dp[i][1] = dp[i-1][1] + (max(z,o) << i);
+        if (tmp1.size() && i != 0){
+            tmp2 += s[i];
+            if (tmp1 != tmp2){
+                ans++;
+                //cout << tmp1 << endl;
+                tmp1 = tmp2;
+                tmp2 = "";
+            }
+        }
     }
-    cout << dp[58][0] << endl;
+
+    
+    cout << ans << endl;
+    //AC
 }
