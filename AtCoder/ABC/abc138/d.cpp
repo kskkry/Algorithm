@@ -42,5 +42,70 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
+const int MAX = 2e5;
 
-int main(){}
+//親と深さ
+int parent[MAX],depth[MAX];
+
+//初期化
+void init(int n){
+    for(int i = 0; i < n; i++){
+        parent[i] = i;
+        depth[i] = 0;
+    }
+}
+
+//親の探索
+int find(int x){
+    if(parent[x] == x) return x;
+    else return parent[x] = find(parent[x]);
+}
+
+
+//木の深さを減らし計算量を抑える
+void unite(int x,int y){
+    x = find(x);
+    y = find(y);
+    if(x == y) return;
+    else if (depth[x] < depth[y]) parent[x] = y;
+    else if (depth[x] == depth[y]){
+        depth[x]++;
+        parent[y] = x;
+    }
+    else parent[y] = x;
+}
+
+//確認
+bool check(int x,int y){
+    return find(x) == find(y);
+}
+
+//不要な場合あり
+int size(int x){
+    return -parent[find(x)];
+}
+
+
+int main(){
+    int N,Q; cin >> N >> Q;
+    long long weight[200020];
+    fill(weight,weight+200002,0);
+    int a,b;
+    init(N);
+    for (int i = 1; i < N; i++){
+        cin >> a >> b;
+        unite(a,b);
+    }
+    long long ans = 0;
+    for (int i = 1; i <= Q; i++){
+        int p,x; cin >> p >> x;
+        int tmp = find(p);
+        weight[tmp] += x;
+    }
+    for (int i = 1; i <= N; i++){
+        int tmp = find(i);
+        cout << weight[tmp];
+        if (i != N) cout << " ";
+        else cout << endl;
+    }
+}

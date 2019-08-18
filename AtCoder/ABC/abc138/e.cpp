@@ -43,4 +43,5 @@ T LCM(T x,T y){
 }
 
 
-int main(){}
+int main(){
+}

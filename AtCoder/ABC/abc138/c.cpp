@@ -43,4 +43,16 @@ T LCM(T x,T y){
 }
 
 
-int main(){}
+int main(){
+    int N; cin >> N;
+    int v[55];
+    for (int i = 0; i < N; i++){
+        cin >> v[i];
+    }
+    sort(v,v+N);
+    double ans = (double)(v[0]+v[1])/2.0;
+    for (int i = 1; i < N-1; i++){
+        ans = (double)(ans+v[i+1])/2.0;
+    }
+    cout << fixed << setprecision(10) << ans << endl;
+}

@@ -47,28 +47,9 @@ long long func(long long a,long long b){
 }
 
 int main(){
-    int N,M; cin >> N >> M;
-    int a[100010],st[100010];
-    fill(st,st+100010,1);
-    long long dp[100010];
-    fill(dp,dp+100010,0);
-    dp[0] = 1;
-    for (int i = 0; i < M; i++){
-        cin >> a[i];
-        st[a[i]] = 0;
-    }
-    for (int i = 0; i < N+10; i++){
-        if (st[i] == 0) continue;
-        if (st[i+2] == 1){
-            dp[i+2] += dp[i];
-            dp[i+2] %= MOD;
-        }
-        if (st[i+1] == 1){
-            dp[i+1] += dp[i];
-            dp[i+1] %= MOD;
-        }
-    }
-    cout << dp[N] << endl;
+    int a; string s; cin >> a >> s;
+    if (a >= 3200) cout << s << endl;
+    else cout << "red" << endl;
 }
 
 

@@ -44,7 +44,17 @@ T LCM(T x,T y){
 
 
 int main(){
-    long long a,b,c; cin >> a >> b >> c;
-    if (a % 2 == 0 || b % 2 == 0 || c % 2 == 0) cout << 0 << endl;
-    else cout << min(a*b, min(b*c, c*a)) << endl;
+    int N; cin >> N;
+    double a[101];
+    cin >> a[0];
+    double sum = a[0];
+    for (int i = 1; i < N; i++){
+        cin >> a[i];
+        sum *= a[i];
+    }
+    double sum2 = 0;
+    for (int i = 0; i < N; i++){
+        sum2 += sum/a[i];
+    }
+    cout << fixed << setprecision(10) << (double)sum/sum2 << endl;;
 }
