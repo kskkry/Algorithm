@@ -41,13 +41,4 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 int main(){
-    int N,M; cin >> N >> M;
-    int time = 100.0*(N-M);
-    int num = 2;
-    for (int i = 0; i < 10; i++){
-        time += 1900.0 / num;
-        num *= 2;
-    }
-    cout << time << endl;
-
 } 
