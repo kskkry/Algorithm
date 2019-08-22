@@ -6,8 +6,8 @@ using namespace std;
 
 int N; // Nは頂点数
 
-int dist[100][100]; //各点ごとの距離、便宜的に N = 100としてみた
-
+long long dist[100][100]; //各点ごとの距離、便宜的に N = 100としてみた
+const long long INF = 1e15;
 //初期化のための関数
 void init(){  
     for(int i = 0; i < N; i++){
@@ -21,7 +21,8 @@ void Warshall_Floyd(){
     for(int i = 0; i < N; i++){
         for(int j = 0; j < N; j++){
             for(int k = 0; k < N; k++){
-                if(i == j || j == k || k == i) continue;
+                if(dist[i][j] == INF || dist[j][k] == INF) continue;
+                
                 /*
                 indexが等しいときは無視できる
                 もしくは距離0に更新
@@ -32,7 +33,7 @@ void Warshall_Floyd(){
                 dist[i][k] = min(dist[i][k], dist[i][j]+dist[j][k]);
                 /*
                 距離が最小になるように更新
-                /*
+                */
             }
         }
     }
