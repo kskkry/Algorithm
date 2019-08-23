@@ -41,6 +41,48 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
+//RMQ verify
+int n,q; 
+const int MAX = 1 << 17;
+int dat[MAX*2];
+void SegT(){
+    int tmp = 1;
+    while (tmp < n) tmp *= 2;
+    n = tmp;
+    for (int i = 0; i < n*2-1; i++){
+        dat[i] = INT_MAX;
+    }
+}
+void update(int k,int x){
+    k += n-1;
+    dat[k] = x;
+    while (k > 0){
+        k = (k-1)/2;
+        dat[k] = min(dat[k*2 + 1], dat[k*2 + 2]);
+    }
+}
+
+int find(int a,int b,int k,int l,int r){
+    if (r <= a || b <= l) return INT_MAX;
+    if (a <= l && r <= b) return dat[k];
+    int v1 = find(a,b,k*2 + 1, l, (l+r)/2);
+    int v2 = find(a,b,k*2 + 2, (l+r)/2, r);
+    return min(v1,v2);
+}
+
+int main(){
+    cin >> n >> q;
+    SegT();
+    for (int i = 0; i < q; i++){
+        int c,x,y; cin >> c >> x >> y;
+        if (c == 0) {
+            update(x,y);
+        } else {
+            cout << find(x,y+1,0,0,n) << endl;
+        }
+    }
+}
+
 
 
 
