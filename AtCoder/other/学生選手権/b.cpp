@@ -1,45 +1,31 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <queue>
-#include <set>
-#include <map>
-#include <utility>
-#include <stack>
-#include <numeric>
 #include <algorithm>
-#include <tuple>
-#include <stdio.h>
-#include <bitset>
-#include <limits.h>
-#include <complex>
-#include <deque>
-#include <iomanip>
 using namespace std;
-#define pi pair<int32,int32>
-#define pl pair<int64,int64>
-#define chmax(a,b) (a<b ? a=b:0)
-#define chmin(a,b) (a>b ? a=b:0)
-#define en cout << endl //セミコロンつけろ
-//#define MM 1000000000
-//#define MOD MM+7
-const int MM = 1e9;
-const int MOD = MM+7;
-const long double PI = acos(-1);
-const long long INF = 1e15;
-int dx[8] = {-1,0,1,0,-1,-1,1,1};
-int dy[8] = {0,-1,0,1,-1,1,1,-1};
-// 'A' = 65, 'Z' = 90, 'a' = 97, 'z' = 122
-// cout << fixed << setprecision(10);
-template<typename T>
-T GCD(T u,T v){
-    return v ? GCD(v,u%v) : u;
-}
-template<typename T>
-T LCM(T x,T y){
-    T gc = GCD(x,y);
-    return x*y/gc;
-}
+const long long MM = 1e9;
+const long long MOD = MM+7;
 
 int main(){
+    int N; long long K; cin >> N >> K;
+    vector<int> a(N);
+    for (int i = 0; i < N; i++){
+        cin >> a[i];
+    }
+
+    long long a1 = 0,a2 = 0,sum = 0;
+    for (int i = 0; i < N; i++){
+        a1 = 0,a2 = 0;
+        for (int j = 0; j < N; j++){
+            if (i == j) continue;
+            if (a[i] > a[j] && j < i){
+                a1++;
+            } else if (a[i] > a[j] && i < j){
+                a2++;
+            }
+        }
+        //cout << a1 << " " << a2 << endl;
+        sum += ((a1 + a2)*((K*(K-1)/2)%MOD) + a2*K);
+        sum %= MOD;
+    }
+    cout << sum << endl;
 }
