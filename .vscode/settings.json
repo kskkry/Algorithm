@@ -4,7 +4,9 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "cstdlib": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "algorithm": "cpp",
+        "queue": "cpp"
     },
     "python.pythonPath": "C:\\Users\\kkkos\\.conda\\envs\\for_practice\\python.exe"
 }

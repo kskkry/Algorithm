@@ -25,6 +25,7 @@ using namespace std;
 #define en cout << endl //セミコロンつけろ
 //#define MM 1000000000
 //#define MOD MM+7
+typedef long long ll;
 const int MM = 1e9;
 const int MOD = MM+7;
 const long double PI = acos(-1);
