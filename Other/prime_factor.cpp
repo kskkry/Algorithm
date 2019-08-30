@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<map>
 using namespace std;
 
 
@@ -45,7 +46,7 @@ int Prime_check(){
     return -1;
 }
 
-bool Eratosthenes(int N){
+void Eratosthenes(int N){
     isPrime[0] = false;
     isPrime[1] = false;
     for(int i = 2; i <= N; i++){

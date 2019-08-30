@@ -44,5 +44,5 @@ T LCM(T x,T y){
 }
 
 int main(){
-    ll N,M,K; cin >> N >> M >> K;
+    ll N; cin >> N;
 }
