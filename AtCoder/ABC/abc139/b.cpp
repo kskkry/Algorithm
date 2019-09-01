@@ -43,4 +43,15 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 int main(){
+    int a,b; cin >> a >> b;
+    if (b == 1){
+        cout << 0 << endl;
+    } else {
+        for (int i = 1; i < 20; i++){
+            if ((a*i - i+1) >= b){
+                cout << i << endl;
+                return 0;
+            }
+        }
+    }
 }

@@ -43,4 +43,10 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 int main(){
+    ll N; cin >> N;
+    if (N == 1){
+        cout << 0 << endl;
+        return 0;
+    }
+    cout << N*(N-1)/2 << endl;
 }

@@ -42,5 +42,25 @@ T LCM(T x,T y){
     T gc = GCD(x,y);
     return x*y/gc;
 }
+struct Point {
+    int x,y; ll h;
+};
+
 int main(){
+    int N; cin >> N;
+    vector<ll> H(N);
+    for (int i = 0; i < N; i++){
+        cin >> H[i];
+    }
+    int mx = 0,tmp = 0;
+    for (int i = 0; i < N-1; i++){
+        if (H[i] >= H[i+1]){
+            tmp++;
+        } else {
+            mx = max(tmp,mx);
+            tmp = 0;
+        }
+    }
+    mx = max(mx,tmp);
+    cout << mx << endl;
 }
