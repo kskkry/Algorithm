@@ -16,7 +16,7 @@
 #include <deque>
 #include <iomanip>
 #include <list>
-#include <time.h>
+#include <cstring>
 using namespace std;
 #define pi pair<int,int>
 #define pl pair<long long,long long>
@@ -42,5 +42,5 @@ T LCM(T x,T y){
     T gc = GCD(x,y);
     return x*y/gc;
 }
-
-int main(){}
+int main(){
+}
