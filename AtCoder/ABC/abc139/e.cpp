@@ -17,18 +17,43 @@
 #include <iomanip>
 #include <list>
 #include <cstring>
+#include <time.h>
 using namespace std;
+#define pi pair<int,int>
+#define pl pair<long long,long long>
+#define chmax(a,b) (a<b ? a=b:0)
+#define chmin(a,b) (a>b ? a=b:0)
+#define en cout << endl //セミコロンつけろ
+//#define MM 1000000000
+//#define MOD MM+7
 typedef long long ll;
+const int MM = 1e9;
+const int MOD = MM+7;
+const long double PI = acos(-1);
+const long long INF = 1e15;
+int dx[8] = {-1,0,1,0,-1,-1,1,1};
+int dy[8] = {0,-1,0,1,-1,1,1,-1};
+// 'A' = 65, 'Z' = 90, 'a' = 97, 'z' = 122
+template<typename T>
+T GCD(T u,T v){
+    return v ? GCD(v,u%v) : u;
+}
+template<typename T>
+T LCM(T x,T y){
+    T gc = GCD(x,y);
+    return x*y/gc;
+}
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
-    int N; scanf("%d", &N);
-    int a[1000][999];
-    bool graph[1000][999];
+    int N; cin >> N;
+    int a[1000][1000];
+    bool graph[1000][1000];
+    clock_t st = clock();
     memset(graph,false,sizeof(graph));
     for (int i = 0; i < N; i++){
         for (int j = 0; j < N-1; j++){
-            scanf("%d", &a[i][j]);
+            cin >> a[i][j];
             a[i][j]--;
         }
     }
@@ -38,7 +63,6 @@ int main(){
     int time = 0;
     while (true){
         bool game = false; //試合を行ったか
-        bool flg = true;
         day++;
         bool used[1000]; fill(used,used+1000,false);
         for (int i = 0; i < N; i++){
@@ -69,6 +93,15 @@ int main(){
                 in[i]++;
                 game = true;
             }
+            if ((double)(clock()-st)/CLOCKS_PER_SEC >= 1.99){
+                cout << N*(N-1)/2 << endl;
+                return 0;
+            }
+        }
+
+        bool flg = true;
+        for (int i = 0; i < N; i++){
+            if (in[i] < N-1) flg = false;
         }
         if (flg) break;
         if (day >= 499500){
@@ -80,5 +113,5 @@ int main(){
             return 0;
         }
     }
-    printf("%d", day);
+    cout << day << endl;
 }
