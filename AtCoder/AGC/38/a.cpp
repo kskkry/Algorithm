@@ -42,39 +42,14 @@ T LCM(T x,T y){
     T gc = GCD(x,y);
     return x*y/gc;
 }
-struct edge {
-    ll to,cost;
+void Exit(){
+    cout << -1 << endl;
+    exit(0);
+}
+
+struct mode {
+    ll T,check,dist;
 };
+
 int main(){
-    int N; cin >> N;
-    ll u,v,w;
-    vector<vector<edge> > g(N);
-    vector<ll> dist(N,-1);
-    for (int i = 0; i < N-1; i++){
-        cin >> u >> v >> w; u--; v--;
-        w %= 2;
-        g[u].push_back({v,w});
-    }
-    dist[0] = 0;
-    queue<ll> que;
-    que.push(0);
-    while (que.size()){
-        int top = que.front();
-        que.pop();
-        for (auto e : g[top]){
-            if (dist[e.to] != -1) continue;
-            if (dist[top] == 0){
-                if (dist[e.cost]%2 == 0) dist[e.to] = 0;
-                else dist[e.to] = 1;
-            } else if (dist[top] == 1){
-                if (dist[e.cost]%2 == 0) dist[e.to] = 1;
-                else dist[e.to] = 0;
-            }
-            que.push(e.to);
-        }
-    }
-    for (auto e : dist){
-        if (e == -1) cout << 0 << endl;
-        else cout << e << endl;
-    }
 }
