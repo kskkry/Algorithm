@@ -3,24 +3,24 @@
 
 
 # DataStructure
-### 1. UnionFind
-### 2. RMQ
-### 3. SegmentTree
-### 4. BIT
-### 5. LCA
+1. UnionFind
+2. RMQ
+3. SegmentTree
+4. BIT
+5. LCA
 
 
 # DP
-### *LCS
+1. LCS
 
 
 # Graph
 グラフ全般について取り扱います
-### *DFS
-### *BFS
-### *Bellmanford
-### *Dijkstra
-### *Warshall Fload
+### 1. DFS
+### 2. BFS
+### 3. Bellmanford
+### 4. Dijkstra
+### 5. Warshall Fload
 
 
 ## Geometry
