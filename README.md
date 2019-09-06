@@ -3,11 +3,11 @@
 
 
 # DataStructure
-### * UnionFind
-### * RMQ
-### * SegmentTree
-### * BIT
-### * LCA
+### 1. UnionFind
+### 2. RMQ
+### 3. SegmentTree
+### 4. BIT
+### 5. LCA
 
 
 # DP
