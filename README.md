@@ -16,20 +16,20 @@
 
 # Graph
 グラフ全般について取り扱います
-### 1. DFS
-### 2. BFS
-### 3. Bellmanford
-### 4. Dijkstra
-### 5. Warshall Fload
+1. DFS
+2. BFS
+3. Bellmanford
+4. Dijkstra
+5. Warshall Fload
 
 
-## Geometry
+# Geometry
 
 
 # Other
-## 素因数分解
-## 累乗
-## オイラー関数
-## 約数列挙
-## 最大公約数・最小公倍数
-## Sortアルゴリズム
+1. 素因数分解
+2. 累乗
+3. オイラー関数
+4. 約数列挙
+5. 最大公約数・最小公倍数
+6. Sortアルゴリズム
