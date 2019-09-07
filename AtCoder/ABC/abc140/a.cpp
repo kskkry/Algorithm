@@ -45,7 +45,7 @@ T LCM(T x,T y){
 struct edge {
     ll to,cost;
 };
-
+/*
 const int COM_MAX = 500500;
 long long fac[COM_MAX],finv[COM_MAX],inv[COM_MAX];
 void init(){
@@ -62,17 +62,9 @@ long long COM(int n,int k){
     if(n < k || n < 0 || k < 0) return 0;
     return fac[n]*(finv[k]*finv[n-k]%MOD)%MOD;
 }
+*/
 
 int main(){
-    ll N,M; cin >> N >> M;
-    if (abs(M-N) >= 2){
-        cout << 0 << endl;
-        return 0;
-    }
-    init();
-    if (abs(N-M) == 1){
-        cout << fac[N]*fac[M]%MOD << endl;
-        return 0;
-    }
-    cout << (fac[N]*fac[M]*2)%MOD << endl;
+    int N; cin >> N;
+    cout << N*N*N << endl;
 }
