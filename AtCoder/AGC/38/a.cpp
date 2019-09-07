@@ -45,6 +45,7 @@ T LCM(T x,T y){
 struct edge {
     ll to,cost;
 };
+
 /*
 const int COM_MAX = 500500;
 long long fac[COM_MAX],finv[COM_MAX],inv[COM_MAX];
@@ -65,4 +66,19 @@ long long COM(int n,int k){
 */
 
 int main(){
+    int N; cin >> N;
+    vector<pair<ll,ll> > p(N);
+    for (int i = 0; i < N; i++){
+        cin >> p[i].second >> p[i].first;
+    }
+    ll t = 0;
+    sort(p.begin(),p.end());
+    for (int i = 0; i < N; i++){
+        t += p[i].second;
+        if (t > p[i].first){
+            cout << "No" << endl;
+            return 0;
+        }
+    }
+    cout << "Yes" << endl;
 }
