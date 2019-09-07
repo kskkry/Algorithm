@@ -42,23 +42,37 @@ T LCM(T x,T y){
     T gc = GCD(x,y);
     return x*y/gc;
 }
+struct edge {
+    ll to,cost;
+};
+
+const int COM_MAX = 500500;
+long long fac[COM_MAX],finv[COM_MAX],inv[COM_MAX];
+void init(){
+    fac[0] = fac[1] = 1;
+    finv[0] = finv[1] = 1;
+    inv[1] = 1;
+    for(int i = 2; i < COM_MAX; i++){
+        fac[i] = fac[i-1]*i%MOD;
+        inv[i] = MOD - inv[MOD%i]*(MOD/i)%MOD;
+        finv[i] = finv[i-1]*inv[i]%MOD;
+    }
+}
+long long COM(int n,int k){
+    if(n < k || n < 0 || k < 0) return 0;
+    return fac[n]*(finv[k]*finv[n-k]%MOD)%MOD;
+}
 
 int main(){
-    int V,E; cin >> V >> E;
-    vector<vector<int> > g(V);
-    vector<int> h(V,0);
-    for (int i = 0; i < E; i++){
-        int s,t; cin >> s >> t;
-        g[s].push_back(t);
-        h[t]++;
+    ll N,M; cin >> N >> M;
+    if (abs(M-N) >= 2){
+        cout << 0 << endl;
+        return 0;
     }
-    stack<int> st;
-    for (int i = 0; i < V; i++){
-        if (h[i] == 0) st.push(i);
+    init();
+    if (abs(N-M) == 1){
+        cout << fac[N]*fac[M]%MOD << endl;
+        return 0;
     }
-    vector<int> ans;
-    while(st.size()){
-        int i = st.top(); st.pop();
-        ans.push_back(i);
-    }
+    cout << (fac[N]*fac[M]*2)%MOD << endl;
 }
