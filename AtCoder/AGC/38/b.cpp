@@ -65,4 +65,8 @@ long long COM(int n,int k){
 */
 
 int main(){
+    int N; cin >> N;
+    //A=0,C=1,G=2,T=3
+    //x : AGAC, AGC, ACG
+    ll dp[101][4]; // dp[ 文字数 ][ 文字の種類 ]
 }

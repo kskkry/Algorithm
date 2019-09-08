@@ -64,21 +64,49 @@ long long COM(int n,int k){
     return fac[n]*(finv[k]*finv[n-k]%MOD)%MOD;
 }
 */
+struct UnionFind {
+	vector<int> par, rank, cnt;
+	UnionFind(int n) : par(n), rank(n, 0), cnt(n, 1){
+		for(int i = 0; i < n; ++i) par[i] = i;
+	}
+ 
+	int find(int x) {
+		if (x == par[x]) return x;
+		return par[x] = find(par[x]);
+	}
+ 
+	void unite(int x, int y) {
+		x = find(x); y = find(y);
+		if (x == y) return;
+ 
+		if (rank[x] < rank[y]) swap(x, y);
+ 
+		par[y] = x;
+		cnt[x] += cnt[y];
+		if (rank[x] == rank[y]) rank[x]++;
+	}
+ 
+	bool same(int x, int y) {
+		return find(x) == find(y);
+	}
+ 
+	int size(int x) {
+		return cnt[find(x)];
+	}
+};
 
 int main(){
-    int N; cin >> N;
-    vector<pair<ll,ll> > p(N);
-    for (int i = 0; i < N; i++){
-        cin >> p[i].second >> p[i].first;
+    int N,M; cin >> N >> M;
+    UnionFind uf(N);
+    vector<ll> a(M),b(M),ans(M);
+    for (int i = 0; i < M; i++){
+        cin >> a[i] >> b[i]; a[i]--; b[i]--;
     }
-    ll t = 0;
-    sort(p.begin(),p.end());
-    for (int i = 0; i < N; i++){
-        t += p[i].second;
-        if (t > p[i].first){
-            cout << "No" << endl;
-            return 0;
+    for (int i = M-1; i >= 0; i--){
+        if (uf.same(a[i],b[i])) ans[i] = ans[i+1];
+        else {
+            uf.unite(a[i],b[i]);
+            ans[i] = uf.size();
         }
     }
-    cout << "Yes" << endl;
 }

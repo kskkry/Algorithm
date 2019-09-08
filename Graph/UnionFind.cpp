@@ -9,7 +9,7 @@ using namespace std;
 struct UnionFind {
 	vector<int> par, rank, cnt;
 	UnionFind(int n) : par(n), rank(n, 0), cnt(n, 1){
-		for(int i=0; i<n; ++i) par[i] = i;
+		for(int i = 0; i < n; ++i) par[i] = i;
 	}
  
 	int find(int x) {
