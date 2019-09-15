@@ -64,6 +64,7 @@ long long COM(int n,int k){
 }
 */
 
+<<<<<<< HEAD
 
 int main(){
     ll N,K,Q; cin >> N >> K >> Q;
@@ -81,4 +82,7 @@ int main(){
             cout << "No" << endl;
         }
     }
+=======
+int main(){
+>>>>>>> 78b7e0f4985599133403dadf22729493931066c3
 }

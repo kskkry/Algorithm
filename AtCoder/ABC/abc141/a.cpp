@@ -66,9 +66,21 @@ long long COM(int n,int k){
 */
 
 int main(){
+<<<<<<< HEAD
     string s; cin >> s;
     if (s == "Sunny") cout << "Cloudy" << endl;
     if (s == "Cloudy") cout << "Rainy" << endl;
     if (s == "Rainy") cout << "Sunny" << endl;
 }
 
+=======
+}
+
+
+/*
+int main(){
+    int s = 12345 + 111;
+    cout << &s << &s+2+0xF << (--s+2*0xF/0xa*0xc); //エスニ
+}
+*/
+>>>>>>> 78b7e0f4985599133403dadf22729493931066c3

@@ -63,6 +63,7 @@ long long COM(int n,int k){
     return fac[n]*(finv[k]*finv[n-k]%MOD)%MOD;
 }
 */
+<<<<<<< HEAD
 int main(){
     string s; cin >> s;
     bool flg = true;
@@ -84,4 +85,8 @@ int main(){
     } else {
         cout << "No" << endl;
     }
+=======
+
+int main(){
+>>>>>>> 78b7e0f4985599133403dadf22729493931066c3
 }

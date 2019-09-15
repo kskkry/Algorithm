@@ -64,6 +64,7 @@ long long COM(int n,int k){
 }
 */
 
+<<<<<<< HEAD
 ll a[100010];
 int main(){
     int N,M; cin >> N >> M;
@@ -87,4 +88,7 @@ int main(){
         ans += t;
     }
     cout << ans << endl;
+=======
+int main(){
+>>>>>>> 78b7e0f4985599133403dadf22729493931066c3
 }
