@@ -7,7 +7,8 @@
         "xstring": "cpp",
         "algorithm": "cpp",
         "queue": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "iomanip": "cpp"
     },
     "python.pythonPath": "C:\\Users\\kkkos\\.conda\\envs\\for_practice\\python.exe"
 }
