@@ -63,6 +63,21 @@ long long COM(int n,int k){
     return fac[n]*(finv[k]*finv[n-k]%MOD)%MOD;
 }
 */
-
 int main(){
+    int N; cin >> N;
+    string s; cin >> s;
+    int mx = 0;
+    int n = s.size();
+    s += "AAAAAAAAAAA";
+    for (int i = 1; i < n/2+1; i++){
+        for (int num = 0; num < n; num++){
+            cout << s.substr(num, i) << " : " << s.substr(num+i,i) << endl;
+            if (s.substr(num, i) == s.substr(num+i, i) && num+i*2 < n){
+                mx = i;
+            } else if (num+i*2 >= n){
+                break;
+            }
+        }
+    }
+    cout << mx << endl;
 }

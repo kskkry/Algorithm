@@ -63,28 +63,5 @@ long long COM(int n,int k){
     return fac[n]*(finv[k]*finv[n-k]%MOD)%MOD;
 }
 */
-
-ll a[100010];
 int main(){
-    int N,M; cin >> N >> M;
-    priority_queue<ll> pq;
-    vector<ll> a(N);
-    for (int i = 0; i < N; i++){
-        cin >> a[i];
-        pq.push(a[i]);
-    }
-    //cout << "size : " << pq.size() << endl;
-    for (int i = 0; i < M; i++){
-        ll Top = pq.top();
-        pq.pop();
-        Top /= 2;
-        pq.push(Top);
-    }
-    ll ans = 0;
-    while(pq.size()){
-        ll t = pq.top();
-        pq.pop();
-        ans += t;
-    }
-    cout << ans << endl;
 }

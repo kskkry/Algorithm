@@ -143,10 +143,10 @@ struct SegmentTree
 };
 
 //区間の最小値がほしいとき
-SegmentTree< int > seg(N, [](int a, int b){ return min(a, b); }, INT_MAX);
+SegmentTree< int > seg(n, [](int a, int b){ return min(a, b); }, INT_MAX);
 
 //区間の合計が欲しいとき
-SegmentTree< int > seg(N, [](int a, int b){ return a + b; }, 0);
+SegmentTree< int > seg(n, [](int a, int b){ return a + b; }, 0);
 
 
 

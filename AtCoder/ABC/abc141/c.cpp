@@ -64,5 +64,21 @@ long long COM(int n,int k){
 }
 */
 
+
 int main(){
+    ll N,K,Q; cin >> N >> K >> Q;
+    vector<ll> a(Q);
+    ll num[100010]; fill(num,num+100010,0);
+    for (int i = 0; i < Q; i++){
+        cin >> a[i];
+        a[i]--;
+        num[a[i]]++;
+    }
+    for (int i = 0; i < N; i++){
+        if (num[i]+K-Q >= 1){
+            cout << "Yes" << endl;
+        } else {
+            cout << "No" << endl;
+        }
+    }
 }
