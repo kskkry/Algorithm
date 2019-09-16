@@ -34,6 +34,7 @@ int manacher(int now,string &s){
 
 //sample 
 int main(){
+    int N; cin >> N;
     string s; cin >> s;
     //各々の文字列について考えるのでO(N*N)
     for (int i = 0; i < s.size(); i++){
