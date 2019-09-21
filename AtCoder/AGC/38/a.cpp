@@ -66,6 +66,24 @@ long long COM(int n,int k){
 */
 
 int main(){
-    int a,b,c; cin >> a >> b;
-    cout << a-b << endl;
+    int H,W,A,B; cin >> H >> W >> A >> B;
+    int s[1010][1010];
+    for (int i = 0; i < B; i++){
+        for (int j = 0; j < W; j++){
+            if (j < A) s[i][j] = 0;
+            else s[i][j] = 1;
+        }
+    }
+    for (int i = B; i < H; i++){
+        for (int j = 0; j < W; j++){
+            if (j < A) s[i][j] = 1;
+            else s[i][j] = 0;
+        }
+    }
+    for (int i = 0; i < H; i++){
+        for (int j = 0; j < W; j++){
+            cout << s[i][j];
+        }
+        cout << endl;
+    }
 }
