@@ -65,5 +65,24 @@ long long COM(int n,int k){
 */
 
 int main(){
+    ll a,b; cin >> a >> b;
+    //Eratosthenes();
+    map<ll,int> mp;
+
+    //ll tmp = sqrt(max(a,b));
+    if (a == 1 || b == 1){
+        cout << 1 << endl;
+        return 0;
+    }
+    ll l = GCD(max(a,b), min(a,b));
+    //cout << l << endl;
+    for (ll i = 2; i <= sqrt(l)+100; i++){
+        while (l % i == 0){
+            mp[i]++;
+            l /= i;
+        }
+    }
+    if (l > 1) mp[l]++;
+    cout << mp.size()+1 << endl;
 }
 

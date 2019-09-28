@@ -64,4 +64,11 @@ long long COM(int n,int k){
 }
 */
 int main(){
+    int N,K; cin >> N >> K;
+    int ans = 0;
+    for (int i = 0; i < N; i++){
+        int h; cin >> h;
+        if (h >= K) ans++;
+    }
+    cout << ans << endl;
 }

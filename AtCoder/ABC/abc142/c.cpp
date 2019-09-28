@@ -64,4 +64,15 @@ long long COM(int n,int k){
 }
 */
 int main(){
+    int N; cin >> N;
+    vector<pair<int,int> > a(N);
+    for (int i = 0; i < N; i++){
+        int num; cin >> num;
+        a[i] = {num, i+1};
+    }
+    sort(a.begin(),a.end());
+    for (int i = 0; i < N; i++){
+        cout << a[i].second << " ";
+    }
+    cout << endl;
 }
