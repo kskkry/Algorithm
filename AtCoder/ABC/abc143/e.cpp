@@ -64,4 +64,46 @@ long long COM(int n,int k){
 }
 */
 int main(){
+    int N,M; cin >> N >> M;
+    ll L; cin >> L;
+    ll a,b,c;
+    vector<vector<edge> > g(N);
+    for (int i = 0; i < M; i++){
+        cin >> a >> b >> c;
+        a--; b--;
+        if (c <= L){
+            g[a].push_back({b,c});
+            g[b].push_back({a,c});
+        }
+    }
+    int Q; cin >> Q;
+    ll s,t;
+    vector<ll> ans(0);
+    for (int i = 0; i < Q; i++){
+        cin >> s >> t;
+        s--; t--;
+        ll dist[303]; fill(dist, dist+303, INF);
+        dist[s] = 0;
+        queue<ll> que;
+        que.push(s);
+        while (que.size()){
+            int now = que.front();
+            que.pop();
+            for (auto e : g[now]){
+                if (dist[e.to] > dist[now] + e.cost){
+                    dist[e.to] = dist[now] + e.cost;
+                    que.push(e.to);
+                }
+            }
+        }
+        ll res = dist[t];
+        if (res == INF){
+            ans.push_back(-1);
+        } else {
+            ans.push_back(res/L);
+        }
+    }
+    for (int i = 0; i < ans.size(); i++){
+        cout << ans[i] << endl;
+    }
 }
