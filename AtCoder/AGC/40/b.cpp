@@ -65,7 +65,6 @@ long long COM(int n,int k){
 */
 int main(){
     int a; 
-    cout << " 数字を入力して";
     cin >> a;
-    cout << "x10 = " << a*10 << endl;
+    cout << a*a << endl;
 }
