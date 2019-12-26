@@ -42,11 +42,13 @@ T LCM(T x,T y){
     T gc = GCD(x,y);
     return x*y/gc;
 }
+
 struct edge {
     ll to,cost;
 };
+
 /*
-const int COM_MAX = 500500;
+const int COM_MAX = 6000500;
 long long fac[COM_MAX],finv[COM_MAX],inv[COM_MAX];
 void init(){
     fac[0] = fac[1] = 1;
@@ -64,7 +66,21 @@ long long COM(int n,int k){
 }
 */
 int main(){
-    int a; 
-    cin >> a;
-    cout << a*a << endl;
+    int N; cin >> N;
+    vector<int> a(N);
+    for (int i = 0; i < N; i++){
+        cin >> a[i];
+        a[i]--;
+    }
+    int cnt = 0, ans = 0;
+    for (int i = 0; i < N; i++){
+        if (a[i] == cnt){
+            cnt++;
+        }
+    }
+    if (cnt == 0){
+        cout << -1 << endl;
+        return 0;
+    }
+    cout << N-cnt << endl;
 }
