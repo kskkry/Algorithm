@@ -9,7 +9,7 @@ int main(){
 }
 
 //二進数変換(配列に格納)
-void to_binary(long long A){
+void ToBinary(long long A){
     int binary[32]; fill(binary,binary+32,0); //32ビット
     long long tmp = A;
     for(int i = 0; A > 0; i++){

@@ -21,7 +21,7 @@ p=∞のときチェビチェフ距離
 using namespace std;
 int n;
 double x[100],y[100];
-double distance(double p){
+double Distance(double p){
     double ans = 0;
     for(int i = 0; i < n; i++){
         double w = abs(x[i]-y[i]);
@@ -39,9 +39,9 @@ int main(){
         cin >> y[i];
     }
     cout << fixed << setprecision(10);
-    cout << distance(1) << endl;
-    cout << distance(2) << endl;
-    cout << distance(3) << endl;
+    cout << Distance(1) << endl;
+    cout << Distance(2) << endl;
+    cout << Distance(3) << endl;
 
     double mx = 0;
     for(int i = 0; i < n; i++){
