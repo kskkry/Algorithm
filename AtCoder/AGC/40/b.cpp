@@ -65,22 +65,50 @@ long long COM(int n,int k){
     return fac[n]*(finv[k]*finv[n-k]%MOD)%MOD;
 }
 */
-int main(){
-    int N; cin >> N;
-    vector<int> a(N);
-    for (int i = 0; i < N; i++){
-        cin >> a[i];
-        a[i]--;
-    }
-    int cnt = 0, ans = 0;
-    for (int i = 0; i < N; i++){
-        if (a[i] == cnt){
-            cnt++;
+
+class IsPrimeSearch {
+    private:
+        static const int Maximum = 1e5;
+        bool isPrime[Maximum+1];
+
+        bool IsPrimeSetting(){
+            if(Maximum < 2) return false;
+            if(Maximum == 2) return true;
+            if(Maximum % 2 == 0) return false;
+
+            for(int i = 3; i*i <= sqrt(Maximum); i += 2){
+                if(Maximum % i == 0) return false;
+            }
+            return true;
         }
-    }
-    if (cnt == 0){
-        cout << -1 << endl;
-        return 0;
-    }
-    cout << N-cnt << endl;
+
+        void init(){
+            for(int i = 1; i <= Maximum; i++){
+                isPrime[i] = true;
+            }
+        }
+
+        int PrimeCheck(){
+            for(int i = 1; i < Maximum; i++){
+                if(isPrime[i]){
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        void Eratosthenes(){
+            isPrime[0] = false;
+            isPrime[1] = false;
+            for(int i = 2; i <= Maximum; i++){
+                if(isPrime[i] == 1){
+                    for(int j = 2*i; j <= Maximum; j += i){
+                        isPrime[j] = false;
+                    }
+                }
+            }
+        }
+};
+
+int main(){
 }
