@@ -1,6 +1,8 @@
+#include <iostream>
+#include <algorithm>
 #define INF 1e9
 using namespace std;
-const int MAX_V = 1e6;
+const int MAX_V = 1e4;
 int cost[MAX_V][MAX_V];
 int mincost[MAX_V];
 bool used[MAX_V];
