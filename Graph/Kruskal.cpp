@@ -34,6 +34,16 @@ T GCD(T u,T v){
 //クラスカル法 <= UnionFind
 #define MAX 100000
 
+class Kruskal {
+  private :
+    vector<int> par, rank;
+
+    void Init(int N){
+      par.resize(N);
+      rank.resize(N);
+    }
+};
+
 int par[MAX],rank_[MAX];
 void init(int n){
     for(int i = 0; i < n; i++){
