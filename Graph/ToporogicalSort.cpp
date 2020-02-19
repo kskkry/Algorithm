@@ -61,6 +61,43 @@ int main(){
     return;
 }
 
+/*
+//確認済み
+//http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B&lang=ja
+
+vector<vector<int> > g;
+vector<int> isVisited, out;
+void Topological(int pos){
+    isVisited[pos] = true;
+    for (int i = 0; i < g[pos].size(); i++){
+        if (!isVisited[g[pos][i]]){
+            Topological(g[pos][i]);
+        }
+    }
+    out.push_back(pos);
+}
+
+int main(){
+    int V, E; cin >> V >> E;
+    g.resize(V);
+    isVisited.resize(V, 0);
+    vector<int> IsVisited(V, 0);
+    for (int i = 0; i < E; i++){
+        int s, t; cin >> s >> t;
+        g[s].push_back(t);
+    }
+    for (int i = 0; i < V; i++){
+        if (isVisited[i]) continue;
+        Topological(i);
+    }
+    reverse(out.begin(), out.end());
+    for (int i = 0; i < out.size(); i++){
+        cout << out[i] << endl;
+    }
+}
+*/
+
+
 
 
 
@@ -89,3 +126,4 @@ void topological_sort(){
 }
 
 */
+

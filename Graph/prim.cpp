@@ -8,6 +8,7 @@ int mincost[MAX_V];
 bool used[MAX_V];
 int v;
 
+//出典「蟻本」
 int prim(){
     for(int i = 0; i < v; i++){
         mincost[i] = INF;
@@ -17,6 +18,7 @@ int prim(){
     mincost[0] = 0;
     while(true){
         int v = -1;
+        //今存在する木から、最小距離かつまだ接続していない点を探す
         for(int u = 0; u < v; u++){
             if(!used[u] && (v == -1 || mincost[u] < mincost[v])) v = u;
         }

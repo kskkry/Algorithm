@@ -20,7 +20,9 @@
 2. BFS
 3. Bellmanford
 4. Dijkstra
-5. Warshall Fload
+5. Warshall Floyd
+6. Kruskal
+7. Prim
 
 
 # Geometry

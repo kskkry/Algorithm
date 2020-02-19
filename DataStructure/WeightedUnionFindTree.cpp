@@ -60,26 +60,3 @@ template<class T> struct UnionFind {
 };
 
 
-//以下は引用
-//ABC-087-D
-int main() {
-    int N, M;
-    cin >> N >> M;
-    UnionFind<long long> uf(N);
-    for (int i = 0; i < M; ++i) {
-        int l, r, d; cin >> l >> r >> d; --l, --r;
-        if (uf.same(l, r)) {
-            long long diff = uf.diff(l, r);
-            if (diff != d) {
-                puts("No");
-                return 0;
-            }
-        }
-        else {
-            uf.merge(l, r, d);
-        }
-    }
-    puts("Yes");
-}
-
-

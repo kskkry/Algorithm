@@ -44,23 +44,13 @@ T LCM(T x,T y){
     return x*y/gc;
 }
 
+
+
+
 int main(){
     int N; cin >> N;
-    vector<ll> A(N+2);
-    for (int i = 1; i <= N; i++){
-        cin >> A[i];
-    }
-    vector<ll> left(N+2), right(N+2);
-    left[0] = 0, right[N+1] = 0;
-    for (int i = 1; i <= N; i++){
-        left[i] = GCD(left[i-1], A[i]);
-    }
-    for (int i = N; i >= 1; i--){
-        right[i] = GCD(right[i+1], A[i]);
-    }
-    ll mx = 0;
-    for (int i = 1; i <= N; i++){
-        mx = max(mx, GCD(left[i], right[i+1]));
-    }
-    cout << mx << endl;
+	vector<vector<int> > g(N);
+	for (int i = 1; i < N; i++){
+		int s, t, w; cin >> s >> t >> w;
+	}
 }
