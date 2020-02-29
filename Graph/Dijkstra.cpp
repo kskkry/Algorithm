@@ -1,7 +1,7 @@
 #include<vector>
 #include<algorithm> 
 #include<iostream>
-
+#include<queue>
 using namespace std;
 
 #define pi pair<int,int>
@@ -11,14 +11,15 @@ using namespace std;
 #define MAX 1e5;
 struct edge {ll from,to,cost;};
 
-priority_queue<pi,vector<pi>,greater<pi>> que; //que.firstは最短距離,que.secondはindex
-int N,M;                                       // Nは頂点数, Mは辺の数
-int dist[N];                                   //ある頂点までの最短距離
-vector<edge> G[MAX];                           //グラフ（問題によってはedgeの変数は減らせる）
+//que.firstは最短距離,que.secondはindex
+priority_queue<pi,vector<pi>,greater<pi>> que; 
+int N,M;                                       
+int dist[N];                                   
+vector<edge> G[MAX];                          
 
 void dijkstra(int n){
-    fill(dist,dist+N,INF);  //初期化
-    dist[n] = 0;          　//初期化
+    fill(dist,dist+N,INF); 
+    dist[n] = 0; 
     
     que.push(pl(0,n));
     while(que.size()){
