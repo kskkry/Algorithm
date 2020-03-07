@@ -8,7 +8,8 @@
         "algorithm": "cpp",
         "queue": "cpp",
         "utility": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "bitset": "cpp"
     },
     
     "python.pythonPath": "C:\\Users\\koska\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
